@@ -12,3 +12,14 @@ Claudio Toyoshi Onohara
 - Testes
   * [X] Deve ter cobertura de testes end-2-end e unitários
   * [X] 100% de code coverage
+
+### Rodar testes
+
+- Em modo watch
+  npm run test:dev
+
+- Uma unica vez
+  npm run test
+
+- Rodar cobertura de testes
+- npm run test:cov
