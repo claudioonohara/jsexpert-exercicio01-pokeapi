@@ -15,11 +15,8 @@ Claudio Toyoshi Onohara
 
 ### Rodar testes
 
-- Em modo watch
-  npm run test:dev
+- Em modo watch: npm run test:dev
 
-- Uma unica vez
-  npm run test
+- Uma unica vez: npm run test
 
-- Rodar cobertura de testes
-- npm run test:cov
+- Rodar cobertura de testes:  npm run test:cov
