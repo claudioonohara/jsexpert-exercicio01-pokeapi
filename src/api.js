@@ -1,10 +1,14 @@
-const https = require('https');
-const fs = require('fs');
+const http = require('http');
+
+const TeamService = require('./service/teamService');
 const HTTP_PORT = 8000;
 
 const routes = {
-    '/team:get': (request, response) => {
-        response.write('team page')
+    '/team:get': async (request, response) => {
+        const teamService = new TeamService()
+        const pokemonFinalList = await teamService.getPokemonList()
+        response.write(JSON.stringify(pokemonFinalList))
+
         return response.end()
     },
     '/:get': (request, response) => {
@@ -18,11 +22,6 @@ const routes = {
     }
 }
 
-const options = {
-  key: fs.readFileSync('key.pem'),
-  cert: fs.readFileSync('cert.pem')
-};
-
 const handler = function (request, response) {
     const { url, method } = request
     const routeKey = `${url}:${method.toLowerCase()}`
@@ -34,7 +33,7 @@ const handler = function (request, response) {
     return chosen(request, response)
 }
 
-const app = https.createServer(options,handler)
+const app = http.createServer(handler)
     .listen(HTTP_PORT, () => console.log('app running at', HTTP_PORT));
 
 module.exports = app
