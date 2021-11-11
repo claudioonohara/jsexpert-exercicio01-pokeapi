@@ -1,6 +1,8 @@
 ### Aluno JSExpert
 Claudio Toyoshi Onohara
 
+### Descrição do Projeto
+
 Consumindo a PokeAPI, faça uma API que retorne 3 pokemóns aleatórios 
 para formar seu time inicial numa jornada pokemon.
 
