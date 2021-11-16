@@ -28,7 +28,7 @@ class TeamService {
 
         // const numberOfMoves = pokeMoves.length
         // const movesToget = (numberOfMoves > 3) ? 3 : numberOfMoves
-        for(let i = 0; i < 3 ; i++) {
+        for(let i = 0; i < 3; i++) {
             firstThreeMoves.push(pokeMoves[i].move.name)
         }   
         
@@ -38,7 +38,7 @@ class TeamService {
     async getPokemonList() {
         const pokemonFinalList = []
         const randomPokemonList = await this.chooseThreeRandomPokemon()
-        for(let i = 0; i < randomPokemonList.length ; i ++) {
+        for(let i = 0; i < randomPokemonList.length; i++) {
             pokemonFinalList.push(
                 {
                     name: randomPokemonList[i].name,

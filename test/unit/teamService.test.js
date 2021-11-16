@@ -66,7 +66,7 @@ describe('TeamService Suite Test', () => {
 
         const spy = sinon.spy(teamService, teamService.getRandomPositionFromArray.name)
 
-        const randomPokes = await teamService.chooseThreeRandomPokemon()
+        await teamService.chooseThreeRandomPokemon()
         
         const expectedCallCount = 3
         
