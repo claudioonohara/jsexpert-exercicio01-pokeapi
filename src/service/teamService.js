@@ -36,19 +36,15 @@ class TeamService {
     }
 
     async getPokemonList() {
-        const pokemonFinalList = []
-        const randomPokemonList = await this.chooseThreeRandomPokemon()
-        for(let i = 0; i < randomPokemonList.length; i++) {
-            pokemonFinalList.push(
-                {
-                    name: randomPokemonList[i].name,
-                    moves: await this.getFirstThreeMovesFromPokemon(randomPokemonList[i].url)
-                }
-            )
-        }
-
-        return pokemonFinalList
-    }
+        const randomPokemonList = await this.chooseThreeRandomPokemon();
+        const pokemonFinalList = await Promise.all(
+          randomPokemonList.map(async ({ name, url }) => ({
+            name,
+            moves: await this.getFirstThreeMovesFromPokemon(url),
+          }))
+        );
+        return pokemonFinalList;
+      }
 
 }
 
