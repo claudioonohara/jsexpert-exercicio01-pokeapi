@@ -26,8 +26,6 @@ class TeamService {
 
         const pokeMoves = await this.teamRepository.getPokeMoves(pokemonUrl)
 
-        // const numberOfMoves = pokeMoves.length
-        // const movesToget = (numberOfMoves > 3) ? 3 : numberOfMoves
         for(let i = 0; i < 3; i++) {
             firstThreeMoves.push(pokeMoves[i].move.name)
         }   

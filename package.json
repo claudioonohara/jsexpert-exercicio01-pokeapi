@@ -2,7 +2,7 @@
   "name": "jsexpert-exercicio01-pokeapi",
   "version": "1.0.0",
   "description": "",
-  "main": "api.js",
+  "main": "src/api.js",
   "scripts": {
     "start": "node src/api.js",
     "test:dev": "NODE_ENV=test npx mocha -w --parallel **/**/*.test.js",
