@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/api.js",
     "test:dev": "NODE_ENV=test npx mocha -w --parallel **/**/*.test.js",
-    "test": "NODE_ENV=test npx mocha --parallel **/**/*.test.js",
+    "test": "npx standard --fix && NODE_ENV=test npx mocha --parallel **/**/*.test.js",
     "test:cov": "NODE_ENV=test npx nyc npx mocha --exit --parallel **/**/*.test.js"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
     "mocha": "^8.2.1",
     "nyc": "^15.1.0",
     "sinon": "^9.2.1",
+    "standard": "^16.0.4",
     "supertest": "^6.0.1"
   }
 }
